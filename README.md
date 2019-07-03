@@ -150,20 +150,26 @@ kubectl create -f prometheus-service.yaml --namespace=monitoring
 3. Once created, you can access the Prometheus dashboard using any Kubernetes node IP on port 30000. If you are on the cloud, make sure you have the right firewall rules for accessing the apps.
 
 
-
-img 
+![](https://github.com/sangam14/Prometheus-Monitoring-with-k8/blob/master/img%201.jpg)
 
 
 
 4. Now if you go to status –> Targets, you will see all the Kubernetes endpoints connected to Prometheus automatically using service discovery as shown below. So you will get all kubernetes container and node metrics in Prometheus.
 
 
-img 
+
+![](https://github.com/sangam14/Prometheus-Monitoring-with-k8/blob/master/img%202.jpg)
 
 5. You can head over the homepage and select the metrics you need from the drop-down and get the graph for the time range you mention. An example graph for container memory utilization is shown below.
 
 
 
-img 
+
+![](https://github.com/sangam14/Prometheus-Monitoring-with-k8/blob/master/img%203.jpg)
 
 
+
+
+## Contributor - 
+
+Sangam biradar - smbiradar14@gmail.com - engineITops.icu 
