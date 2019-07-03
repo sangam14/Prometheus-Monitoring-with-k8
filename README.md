@@ -12,7 +12,7 @@ kubectl create clusterrolebinding owner-cluster-admin-binding \
     --user $ACCOUNT
     
  ```
-Create A Namespace
+# Create A Namespace
 
 First, we will create a Kubernetes namespace for all our monitoring components. Execute the following command to create a new namespace called monitoring.
 
@@ -27,7 +27,7 @@ You need to assign cluster reader permission to this namespace so that Prometheu
 
 ```kubectl create -f clusterRole.yaml```
 
-Create A Config Map
+# Create A Config Map
 
 We should create a config map with all the prometheus scrape config and alerting rules, which will be mounted to the Prometheus container in /etc/prometheus as prometheus.yaml and prometheus.rules files. The prometheus.yaml contains all the configuration to dynamically discover pods and services running in the kubernetes cluster. prometheus.rules will contain all the alert rules for sending alerts to alert manager.
 
@@ -37,7 +37,7 @@ We should create a config map with all the prometheus scrape config and alerting
 
 ```kubectl create -f config-map.yaml -n monitoring```
 
-Create A Prometheus Deployment
+# Create A Prometheus Deployment
 
 1. Create a file named prometheus-deployment.yaml and copy the following contents onto the file. In this configuration, we are mounting the Prometheus config map as a file inside /etc/prometheus. It uses the official Prometheus image from docker hub.
 
@@ -85,9 +85,9 @@ spec:
 
 ```kubectl get deployments --namespace=monitoring```
 
-You can also get details from the kubernetes dashboard like shown below.
+You can also get details from the kubernetes dashboard .
 
-Connecting To Prometheus
+# Connecting To Prometheus
 
 You can connect to the deployed Prometheus in two ways.
 
@@ -95,7 +95,7 @@ Using Kubectl port forwarding
 Exposing the Prometheus deployment as a service with NodePort or a Load Balancer.
 We will look at both the options.
 
-Using Kubectl Port Forwarding
+# Using Kubectl Port Forwarding
 
 Using kubectl port forwarding, you can access the pod from your workstation using a selected port on your localhost.
 
@@ -120,7 +120,7 @@ kubectl port-forward prometheus-monitoring-3331088907-hm5n1 8080:9090 -n monitor
 ```
 3. Now, if you access http://localhost:8080 on your browser, you will get the Prometheus home page.
 
-Exposing Prometheus As A Service
+# Exposing Prometheus As A Service
 
 To access the Prometheus dashboard over a IP or a DNS name, you need to expose it as kubernetes service.
 
