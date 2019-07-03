@@ -1,6 +1,14 @@
-# How To Setup Prometheus Monitoring On Kubernetes Cluster
+# How To setup Prometheus Monitoring Stack On Kubernetes Cluster
 
-```git clone https://github.com/sangam14/Prometheus-Monitoring-with-k8```
+Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. It is 100% open source software. Many companies and organizations have adopted Prometheus, and the project has a very active developer and user community. It is now a standalone open source project and maintained independently of any company. To emphasize this, and to clarify the project's governance structure, Prometheus joined the Cloud Native Computing Foundation in 2016 as the second hosted project, after Kubernetes.
+
+
+
+## Cloning the Repository
+
+```
+git clone https://github.com/sangam14/Prometheus-Monitoring-with-k8
+```
 
 Connect to your Kubernetes cluster and set up the proxy for accessing the Kubernetes dashboard.
 
