@@ -1,6 +1,11 @@
 # How To Setup Prometheus Monitoring On Kubernetes Cluster
 
 
+``
+git clone https://github.com/sangam14/Prometheus-Monitoring-with-k8
+
+```
+
 Connect to your Kubernetes cluster and set up the proxy for accessing the Kubernetes dashboard.
 
 Note: If you are using GKE, you need to run the following commands as you need privileges to create cluster roles.
