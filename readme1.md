@@ -2,10 +2,10 @@
 # Setting Up Alert Manager On Kubernetes
 
 AlertManager is an opensource alerting system which works with Prometheus Monitoring system.
-In our lab , we have explained Prometheus setup on Kubernetes.
+In our dockerlab , we have explained Prometheus setup on Kubernetes.
 
 
-Note: In this guide, all the Alert Manager Kubernetes objects will be created inside a namespace called monitoring. 
+Note: all the Alert Manager Kubernetes objects will be created inside a namespace called monitoring. 
 If you use a different namespace, you can replace it in the YAML files.
 
 
