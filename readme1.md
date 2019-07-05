@@ -9,7 +9,7 @@ Note: In this guide, all the Alert Manager Kubernetes objects will be created in
 If you use a different namespace, you can replace it in the YAML files.
 
 
-# Alert Manager On Kubernetes
+## Alert Manager On Kubernetes
 
 Alert Manager setup has the following key configurations.
 
@@ -19,7 +19,7 @@ Alert Manager setup has the following key configurations.
 4.Alert Manager service to access the web UI.<br>
 
 
-# Key Things To Note
+## Key Things To Note
 
 1.You should have a working Prometheus setup up and running. Follow this lab for Prometheus setup ==> [Prometheus Setup On Kubernetes](https://github.com/sangam14/Prometheus-Monitoring-with-k8/blob/master/README.md)<br>
 2.Prometheus should have the correct alert manager service endpoint in its config.yaml as shown below. Only then, Prometheus will be able to send the alert to Alert Manager.
@@ -88,26 +88,26 @@ data:
         channel: '#enterchannel_name'
 
 ```
-# Let’s create the config map using kubectl.
+## Let’s create the config map using kubectl.
 ```
 kubectl create -f AlertManagerConfigmap.yaml
 
 
 ```
-# Config Map For Alert Template
+## Config Map For Alert Template
 
 We need alert templates for all the receivers we use (email, slack etc). Alert manager will dynamically substitute the values and delivers alerts to the receivers based on the template. You can customize these templates based on your needs.
 
 Create a file named AlertManagerConfigmap.yaml and copy the contents from this file link ==> Alert Manager Template YAML
 
-# Create the configmap using kubectl.
+## Create the configmap using kubectl.
 
 
 ```
 kubectl create -f AlertTemplateConfigMap.yaml
 
 ```
-# Create A Deployment
+## Create A Deployment
 
 In this deployment, we will mount the two config maps we created.
 
@@ -159,13 +159,13 @@ spec:
 ```
 
 
-# Create the deployment using kubectl.
+## Create the deployment using kubectl.
 
 ```
 kubectl create -f Deployment.yaml
 
 ```
-# Create A Service
+## Create A Service
 
 We need to expose the alert manager using NodePort or Load Balancer just to access the Web UI. Prometheus will talk to alert manager using the internal service endpoint.
 
@@ -191,7 +191,7 @@ spec:
       nodePort: 31000
       
  ```     
-# Create the service using kubectl.
+## Create the service using kubectl.
 
 ```
 kubectl create -f Service.yaml
@@ -203,4 +203,8 @@ Now, you will be able to access Alert Manager on Node Port 31000. For example,
 http://35.114.150.153:31000
 
 ```
- 
+
+
+## Contributor - 
+
+Sangam biradar - smbiradar14@gmail.com - engineITops.icu  
